@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+/*초기화 */
+*{margin:0; padding:0;}
+body{font-family:'Times New Roman',serif;width:960px;margin:0 auto; }
+li{ list-style:none;}
+img{border:0;}
+
+/*헤더 */
+.header{
+	/* 중앙정렬 */
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	/* 절대좌표 자손에 absolute*/
+	height:80px;
+	position:relative;
+	}
+.header > #id{
+	
+	position :absolute;
+	left:20px; top:30px;
+}
+/* 메뉴 수평정렬 */
+.nav > ul{overflow:hidden;width:960px;}
+.nav > ul >li{float:left;}
+.nav > ul >li>a{
+	display:block;
+	padding: 10px 20px;
+	border: 1px solid black;
+	text-decoration: none;
+	background:#819FF7;
+	/*서브메뉴설정*/
+	}
+.nav > ul >li>a:hover{
+	background: black;
+	color:white;
+}
+.nav > ul >li:first-child>a{border-radius:10px 0 0 10px;}
+.nav > ul >li:last-child>a{border-radius:0 10px 10px 0px;}
+
+
+
+/*서브메뉴*/
+.submenu{display:none;position:absolute;
+ width:150px;margin: 0; z-index: 1;
+}
+.right li:nth-child(2):hover .submenu{display:block;
+	z-index: 2;}
+	.right li:nth-child(1):hover .submenu{display:block;
+	z-index: 2;}
+.right li:nth-child(3):hover .submenu{display:block;
+		z-index: 2;}
+.right li a{display:inline-block;
+	color:white;background-color:#819FF7;
+	padding:10px 20px; border: 1px solid white;
+	text-decoration: none;} 
+.nav > ul >li>ul>li:first-child>a{border-radius:10px 10px 0 0 ;}
+.nav > ul >li>ul>li:last-child>a{border-radius:0 0 10px 10px;}
+
+.container{
+	width:960px; height:650px;
+	margin: 0 auto;
+	
+}
+.section{
+	width:700px;
+	float:left;
+	
+	border: 1px solid black;
+	word-break:break-all;
+}
+.section jsp{text-overflow:ellipsis;}/* 화면 초과하는 글 내용 출력시 생략됨  */
+.aside{
+	width:200px;
+	padding-left:55px;
+	float:left;	
+}
+.footer{
+	/* 중앙정렬 */
+	width:960px; margin: 0 auto;
+	margin-top:10px;
+	/* 테두리 */
+	box-sizing: border-box;
+	padding: 20px;
+	border: 1px solid black;
+	/*글자정렬*/
+	text-align:center;
+}
+/*  어사이드 탭바 */
+/*첫번째 탭 */
+#first{display : none;} 
+#first ~ .item{display : none;}
+#first:checked ~ .item{display : block;}
+/*두번째 탭 */
+#second{display : none;}
+#second ~ .item2{display : none;}
+#second:checked ~ .item2{display : block;}
+
+/* 탭모양 구성1 */
+.section.buttons { }
+.section.buttons > label { }
+#first:checked ~ .buttons > label:nth-of-type(1){ }
+#second:checked ~ .buttons > label:nth-of-type(2){ }
+
+
+/* 탭모양 구성2 */
+.buttons {overflow:hidden; }
+.buttons > label { 
+
+	/* 수평정렬 */
+	display:block; float:left;
+	
+	/* 크기 및 글자 위치 지정 */
+	width:100px; height:30px;
+	line-height:30px;
+	text-align:center;
+	
+	/* 테두리지정 */
+	box-sizing: border-box;
+	border:1px solid black;
+	
+	/* 색상 지정 */
+	background: black;
+	color:white;
+	 
+	}
+ 	
+#first:checked ~ .buttons > label:nth-of-type(1){
+		background:white;
+		color:black;
+	}
+#second:checked ~ .buttons > label:nth-of-type(2){
+		background:white;
+		color:black;
+	}
+/* 목록에 스타일 사용 */
+.itemt{
+	overflow:hidden;
+	padding:10px;
+	border:1px solid black;
+	border-top: none;
+}
+
